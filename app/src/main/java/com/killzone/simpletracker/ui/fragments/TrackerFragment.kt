@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.killzone.simpletracker.R
 import com.killzone.simpletracker.other.Constants.REQUEST_CODE_LOCATION_PERMISSION
 import com.killzone.simpletracker.other.TrackingUtility
 import com.killzone.simpletracker.ui.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_tracker.*
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
@@ -23,6 +25,11 @@ class TrackerFragment : Fragment(R.layout.fragment_tracker),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requestPermissions()
+
+
+        someButton.setOnClickListener {
+            findNavController().navigate(R.id.action_trackerFragment_to_trackingFragment)
+        }
     }
 
 
