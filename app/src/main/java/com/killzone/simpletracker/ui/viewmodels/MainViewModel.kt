@@ -10,5 +10,6 @@ import com.killzone.simpletracker.repository.MainRepository
 
 class MainViewModel @ViewModelInject constructor(
     val repository: MainRepository
-) {
+) : ViewModel() {
+
 }
