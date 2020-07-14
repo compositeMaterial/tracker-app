@@ -7,5 +7,5 @@ import androidx.room.TypeConverters
 @Database(entities = [Tracker::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class TrackerDatabase : RoomDatabase() {
-    abstract fun getDatabase(): TrackerDatabase
+    abstract fun getDatabase(): TrackerDao
 }
