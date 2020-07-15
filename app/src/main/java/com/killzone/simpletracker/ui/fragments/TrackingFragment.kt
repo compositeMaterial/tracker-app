@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.gms.maps.GoogleMap
 import com.killzone.simpletracker.R
+import com.killzone.simpletracker.other.Constants.ACTION_START_OR_RESUME_SERVICE
 import com.killzone.simpletracker.services.TrackingService
 import com.killzone.simpletracker.ui.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,6 +22,10 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        btnStart.setOnClickListener {
+            sendCommandToService(ACTION_START_OR_RESUME_SERVICE)
+        }
 
         mapView.onCreate(savedInstanceState)
 
